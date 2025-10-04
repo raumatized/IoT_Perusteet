@@ -1,4 +1,4 @@
-#onboard led blink
+#vk1 onboard led blink
 
 from machine import Pin
 import time 
