@@ -7,7 +7,7 @@ app.use(express.json())
 
 const db = new (require('sqlite3')).Database('./Severidatabase.db', (err) => {
     if (err) return console.error(err.message);
-    console.log('Connected Sqlite database");
+    console.log('Connected Sqlite database); 
 }); 
 
 db.run(`CREATE TABLE IF NOT EXIST users ( 
@@ -26,8 +26,8 @@ app.get('/api/sensor', (req, res) => {
 });
 
 app.get('/api/users', (req, res) => {
-   console.log("In get endpoint")
-   db.all('SELECT * FROM users' [] (err, rows) => {
+   console.log("In get endpoint");
+   db.all('SELECT * FROM users', [], (err, rows) => {
         if (err) return res.status(500).json({error: err.message});
         res.json(rows);
     })
@@ -35,7 +35,7 @@ app.get('/api/users', (req, res) => {
 });
 
 app.post('/api/users', (req, res) => {
-    console.log("In post endpoint")
+    console.log("In post endpoint");
     const{ name, email } = req.body;
     db.run(`INSERT INTO users (name, email) VALUES (?, ?)`, [name, email], function(err){
         if (err) return res.status(400).json({error: error.message})
