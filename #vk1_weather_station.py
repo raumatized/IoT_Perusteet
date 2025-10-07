@@ -8,7 +8,7 @@ sensor = DHT22(Pin(28))
 
 while True:
     try:
-        sensor.measure
+        sensor.measure()
         temp = sensor.temperature()
         hum = sensor.humidity()
         print("Lämpötila:  {:.1f}°C".format(temp))
