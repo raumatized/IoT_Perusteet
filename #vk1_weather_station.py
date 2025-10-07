@@ -11,8 +11,8 @@ while True:
         sensor.measure
         temp = sensor.temperature()
         hum = sensor.humidity()
-        print("Lämpötila: " {:.1f}%.format(temp))
-        print("Kosteus: " {:.1f}%.format(hum)) 
+        print("Lämpötila:  {:.1f}°C".format(temp))
+        print("Kosteus:  {:.1f}%".format(hum)) 
     except OSError as e:
         print("Sensor read error: ", e)
     
