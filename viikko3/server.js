@@ -5,10 +5,10 @@ const sqlite3 = require('sqlite3');
 
 app.use(express.json())
 
-const db = new (require('sqlite3')).Database('./Severidatabase.db', (err) => {
+const db = new sqlite3.Database('./Severidatabase.db', (er) => {
     if (err) return console.error(err.message);
-    console.log('Connected Sqlite database); 
-}); 
+    console.log('Connected to SQLite database');
+})
 
 db.run(`CREATE TABLE IF NOT EXIST users ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
