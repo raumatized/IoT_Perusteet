@@ -6,8 +6,8 @@ const sqlite3 = require('sqlite3');
 app.use(express.json())
 
 const db = new (require('sqlite3')).Database('./Severidatabase.db', (err) => {
-    if (err) return console.error(err.message)
-    console.log('Connected Sqlite database' )
+    if (err) return console.error(err.message);
+    console.log('Connected Sqlite database");
 }); 
 
 db.run(`CREATE TABLE IF NOT EXIST users ( 
